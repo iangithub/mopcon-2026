@@ -1,0 +1,49 @@
+{
+  "workers": {
+    "software-coding": {
+      "kind": "codex",
+      "model": "gpt-6-sol",
+      "effort": "medium"
+    },
+    "software-code-review": {
+      "kind": "codex",
+      "model": "gpt-6-sol",
+      "effort": "high"
+    },
+    "software-unit-test": {
+      "kind": "codex",
+      "model": "gpt-6-luna",
+      "effort": "medium"
+    },
+    "software-repo-scout": {
+      "kind": "codex",
+      "model": "gpt-6-luna",
+      "effort": "low"
+    },
+    "writing-writer": {
+      "kind": "claude",
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "writing-editor": {
+      "kind": "codex",
+      "model": "gpt-6-sol",
+      "effort": "medium"
+    },
+    "writing-fact-check": {
+      "kind": "codex",
+      "model": "gpt-6-sol",
+      "effort": "high"
+    },
+    "writing-proofreader": {
+      "kind": "codex",
+      "model": "gpt-6-luna",
+      "effort": "medium"
+    },
+    "writing-researcher": {
+      "kind": "claude",
+      "model": "sonnet",
+      "effort": "medium"
+    }
+  }
+}

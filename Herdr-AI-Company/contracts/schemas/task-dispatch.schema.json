@@ -1,0 +1,189 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "message_type",
+    "run_id",
+    "task_id",
+    "attempt",
+    "project_root",
+    "company_root",
+    "workspace_id",
+    "manager_pane_id",
+    "owner_department",
+    "assigned_department",
+    "delegation_mode",
+    "delegation_id",
+    "role",
+    "worker_skill",
+    "task",
+    "acceptance_criteria",
+    "spec_paths",
+    "input_report_paths",
+    "allowed_read_paths",
+    "allowed_write_paths",
+    "forbidden_write_paths",
+    "snapshot",
+    "report_path",
+    "handoff_to"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "1.0"
+    },
+    "message_type": {
+      "const": "task_dispatch"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]{2,63}$"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]{2,63}$"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "project_root": {
+      "type": "string",
+      "minLength": 1
+    },
+    "company_root": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workspace_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manager_pane_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_department": {
+      "type": "string",
+      "enum": [
+        "software",
+        "writing"
+      ]
+    },
+    "assigned_department": {
+      "type": "string",
+      "enum": [
+        "software",
+        "writing"
+      ]
+    },
+    "delegation_mode": {
+      "enum": [
+        "owner-work",
+        "guest-support"
+      ]
+    },
+    "delegation_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "worker_skill": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "spec_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "input_report_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "allowed_read_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "allowed_write_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "forbidden_write_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope_paths",
+        "digest"
+      ],
+      "properties": {
+        "scope_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      }
+    },
+    "report_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "handoff_to": {
+      "const": "owner-manager"
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Company  Task Dispatch",
+  "description": "Owner Manager -> independent Worker; no Rule body in dispatch."
+}

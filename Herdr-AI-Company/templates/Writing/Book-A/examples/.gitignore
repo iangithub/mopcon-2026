@@ -1,0 +1,6 @@
+# .NET / other generated example artifacts
+**/bin/
+**/obj/
+**/TestResults/
+*.user
+*.suo

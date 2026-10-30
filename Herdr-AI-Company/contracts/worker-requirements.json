@@ -1,0 +1,91 @@
+{
+  "catalog_version": "1.0",
+  "workers": {
+    "software-coding": {
+      "required_rule_keys": [
+        "software.architecture",
+        "software.coding",
+        "software.security"
+      ],
+      "method_references": [
+        "references/implementation.md"
+      ]
+    },
+    "software-unit-test": {
+      "required_rule_keys": [
+        "software.testing",
+        "software.architecture"
+      ],
+      "method_references": [
+        "references/test-execution.md"
+      ]
+    },
+    "software-code-review": {
+      "required_rule_keys": [
+        "software.architecture",
+        "software.coding",
+        "software.review",
+        "software.testing",
+        "software.security"
+      ],
+      "method_references": [
+        "references/architecture-review.md",
+        "references/code-quality-review.md",
+        "references/test-review.md"
+      ]
+    },
+    "software-repo-scout": {
+      "required_rule_keys": [
+        "software.architecture"
+      ],
+      "method_references": [
+        "references/repo-discovery.md"
+      ]
+    },
+    "writing-writer": {
+      "required_rule_keys": [
+        "writing.style",
+        "writing.editorial"
+      ],
+      "method_references": [
+        "references/drafting.md"
+      ]
+    },
+    "writing-editor": {
+      "required_rule_keys": [
+        "writing.editorial",
+        "writing.style"
+      ],
+      "method_references": [
+        "references/editorial-review.md"
+      ]
+    },
+    "writing-fact-check": {
+      "required_rule_keys": [
+        "writing.facts",
+        "writing.sources"
+      ],
+      "method_references": [
+        "references/claim-verification.md"
+      ]
+    },
+    "writing-proofreader": {
+      "required_rule_keys": [
+        "writing.proofreading",
+        "writing.style"
+      ],
+      "method_references": [
+        "references/proofreading.md"
+      ]
+    },
+    "writing-researcher": {
+      "required_rule_keys": [
+        "writing.sources",
+        "writing.facts"
+      ],
+      "method_references": [
+        "references/research-method.md"
+      ]
+    }
+  }
+}
